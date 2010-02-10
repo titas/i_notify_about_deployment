@@ -1,0 +1,26 @@
+INotifyAboutDeployment
+======================
+
+This is to be used to notify redmine (or anyone who has email) about deployments.
+
+More Info
+=========
+Just hook the rake task i_notify_about_deployment:notify to capistrano's after
+callback and support parameters to i_notify_about_deployment/config/.yml's.
+If You want redmine to understand news via email please use my other plugin
+http://github.com/titas/redmine-news-via-email-plugin
+Also You can edit the body of email to suit Your needs.
+
+Requirments
+===========
+
+This was created with ruby 1.8.7 and rails 2.3.5.
+If ruby < 1.8.7 is used, please use action_mailer_optional_tls
+tls plugin for gmail compatability.
+
+Example
+=======
+
+rake i_notify_about_deployment:notify
+
+Copyright (c) 2010 [Titas Norkunas], released under the MIT license
