@@ -1,3 +1,4 @@
 Project. <%= @project %>
 Type. news
-This project has been deployed to <%= @environment %> environment on <%= @sent_on %>.
+Revision. <%= @revision %>
+This project has been deployed to <%= @environment %> environment on <%= @sent_on.strftime("%c") %> by <%= @user %>.

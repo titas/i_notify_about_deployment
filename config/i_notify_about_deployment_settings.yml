@@ -1,6 +1,5 @@
-to: "varsketiz@gmail.com"
+to: "my_redmine_email@gmail.com"
 from: "zomg.sandbox@gmail.com"
-project: "Heroku_sandbox"
-environment: "production"
+project: "my_project_identifier"
 
 

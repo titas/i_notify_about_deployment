@@ -3,8 +3,8 @@
 # if tls is needed with ruby < 1.8.7, check out action_mailer_optional_tls plugin.
 # using ruby < 1.8.7 will add aditional problems with reading email configuration from YAML.
 production:
-    :tls: "true"
-    #:enable_starttls_auto: true
+    #:tls: "true"
+    :enable_starttls_auto: true
     :address: "smtp.gmail.com"
     :port: '587'
     :domain: "smtp.gmail.com"
@@ -13,8 +13,8 @@ production:
     :password: "zomg1234"
 
 development:
-    :tls: "true"
-    #:enable_starttls_auto: true
+    #:tls: "true"
+    :enable_starttls_auto: true
     :address: "smtp.gmail.com"
     :port: '587'
     :domain: "smtp.gmail.com"

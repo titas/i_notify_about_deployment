@@ -6,6 +6,9 @@ namespace :i_notify_about_deployment do
 
   desc "Sends email notification to plugin_root/config/i_notify_about_deployment.yml:to about deployment. Uses aditional params from that YAML file"
   task :notify do
+    puts "Environment: #{ENV['ENV']}" if ENV['ENV']
+    puts "Revision: #{ENV['REVISION']}" if ENV['REVISION']
+    puts "User: #{ENV['USER']}" if ENV['USER']
     if RUBY_VERSION.gsub(".", "").to_i <= 186
       require "#{RAILS_ROOT}/vendor/plugins/action_mailer_optional_tls/lib/action_mailer_tls.rb"
       require "#{RAILS_ROOT}/vendor/plugins/action_mailer_optional_tls/lib/smtp_tls.rb"
@@ -22,7 +25,8 @@ namespace :i_notify_about_deployment do
            "can not notify. Please add \"project: identifier\" to the yml file."
       puts "Rake unsuccessful"
     else
-      ret = INotifyAboutDeployment::Mailer.deliver_notification_about_deployment(config["to"], config["project"])
+      ret = INotifyAboutDeployment::Mailer.deliver_notification_about_deployment(config["to"], 
+        config["project"], ENV['ENV'], ENV['REVISION'], ENV['USER'])
       ret ? (puts "Rake successful") : (puts "Rake unsuccessful")
     end
   end

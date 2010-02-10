@@ -13,12 +13,12 @@ module INotifyAboutDeployment
     end
 
     #send notification with some parameter
-    def notification_about_deployment(to, project, sender = self.from, environment = "production", sent_on = Time.now.strftime("%c"), subject = "Deployed on #{sent_on}")
+    def notification_about_deployment(to, project, environment, revision, user, sent_on = Time.now, subject = "New version deployed on #{sent_on.strftime('%c')} by #{user}")
       subject    subject
       recipients to
-      from       sender
+      from       self.from
       sent_on    sent_on
-      body       :project => project, :environment => environment, :sent_on => sent_on
+      body       :project => project, :environment => environment, :sent_on => sent_on, :revision => revision, :user => user
       content_type "text/plain"
     end
   end
