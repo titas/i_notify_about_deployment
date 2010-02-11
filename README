@@ -9,7 +9,6 @@ More Info
 =========
 Plugin hooks the rake task i_notify_about_deployment:notify to capistrano's after
 callback (recipes/notify_redmine.rb).
-Please support parameters to i_notify_about_deployment/config/.yml's.
 If You want redmine to understand news via email please use my other plugin
 http://github.com/titas/redmine-news-via-email-plugin
 Also You can edit the body of email to suit Your needs.
@@ -31,6 +30,7 @@ Install
 Install in the project you want to send notifications, NOT redmine.
 run script/install git://github.com/titas/i_notify_about_deployment.git
 or copy manually, nothing is run on install.
+Please support parameters to i_notify_about_deployment/config/.yml's.
 
 Example
 =======
