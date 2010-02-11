@@ -14,7 +14,7 @@ namespace :i_notify_about_deployment do
       require "#{RAILS_ROOT}/vendor/plugins/action_mailer_optional_tls/lib/smtp_tls.rb"
     end
     require "#{RAILS_ROOT}/vendor/plugins/i_notify_about_deployment/lib/app/models/i_notify_about_deployment.rb"
-    INotifyAboutDeployment::Mailer.load_settings
+    INotifyAboutDeployment::Mailer.load_settings(ENV['ENV'])
     config = YAML::load(File.open("#{RAILS_ROOT}/vendor/plugins/i_notify_about_deployment/config/i_notify_about_deployment_settings.yml"))
     if !config.has_key?("to")
       puts "No recipient in \"RAILS_ROOT/Vendor/plugins/i_notify_about_deployment/config/i_notify_about_deployment_settings.ymll\"," +

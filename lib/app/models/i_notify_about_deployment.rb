@@ -4,10 +4,10 @@ module INotifyAboutDeployment
   class Mailer < ActionMailer::Base
 
     #load custom mailer settings
-    def self.load_settings()
-      if RAILS_ENV != 'test'
+    def self.load_settings(env)
+      if env != 'test'
         email_settings = YAML::load(File.open("#{RAILS_ROOT}/vendor/plugins/i_notify_about_deployment/config/email.yml"))
-        Mailer.smtp_settings = email_settings[RAILS_ENV] unless email_settings[RAILS_ENV].nil?
+        Mailer.smtp_settings = email_settings[env] unless email_settings[env].nil?
         Mailer.template_root = "#{RAILS_ROOT}/vendor/plugins/i_notify_about_deployment/lib/app/views/"
       end
     end

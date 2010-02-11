@@ -14,13 +14,20 @@ If You want redmine to understand news via email please use my other plugin
 http://github.com/titas/redmine-news-via-email-plugin
 Also You can edit the body of email to suit Your needs.
 
-Requirments
+Requirements
 ===========
 
 This was created with ruby 1.8.7 and rails 2.3.5.
 Works with capistrano 2.5 (didn't try others)
 If ruby < 1.8.7 is used, please use action_mailer_optional_tls
 tls plugin for gmail compatability.
+
+Install
+=======
+
+Install in the project you want to send notifications, NOT redmine.
+run script/install git://github.com/titas/i_notify_about_deployment.git
+or copy manually, nothing is run on install.
 
 Example
 =======
