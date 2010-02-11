@@ -39,6 +39,10 @@ No more!
 
 http://github.com/titas/redmine-news-via-email-plugin
 
+Do not forget to add i_notify_about_deployment/config/i_notify_about_deployment_settings.yml[:to]
+to redmine users who can post news for selected project.
+
+
 Feedback
 ========
 Is very appreciated!
