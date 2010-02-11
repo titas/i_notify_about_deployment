@@ -13,6 +13,9 @@ Please support parameters to i_notify_about_deployment/config/.yml's.
 If You want redmine to understand news via email please use my other plugin
 http://github.com/titas/redmine-news-via-email-plugin
 Also You can edit the body of email to suit Your needs.
+If You are using capistrano then the recipe runs rake task remotely on Your server
+with RAILS_ENV=#{environment You are deploying to}, su be sure to provide right information
+to .yml's (email.yml especially)
 
 Requirements
 ===========
