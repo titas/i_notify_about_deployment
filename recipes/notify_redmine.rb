@@ -6,7 +6,8 @@ namespace :i_notify_about_deployment do
   task :notify_redmine do
     rails_env = fetch(:rails_env, "production")
     local_user = ENV['USER'] || ENV['USERNAME']
-    notify_command = "rake i_notify_about_deployment:notify ENV=#{rails_env} REVISION=#{current_revision} USER=#{local_user}"
-    puts `#{notify_command}`
+    notify_command = "rake i_notify_about_deployment:notify RAILS_ENV=#{rails_env} ENV=#{rails_env} REVISION=#{current_revision} USER=#{local_user}"
+    puts notify_command
+    run "cd #{release_path}; #{notify_command}"
   end
 end

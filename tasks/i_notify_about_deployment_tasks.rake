@@ -26,7 +26,7 @@ namespace :i_notify_about_deployment do
       puts "Rake unsuccessful"
     else
       ret = INotifyAboutDeployment::Mailer.deliver_notification_about_deployment(config["to"], 
-        config["project"], ENV['ENV'], ENV['REVISION'], ENV['USER'])
+        config["project"], ENV['ENV'], ENV['REVISION'], ENV['USER'], config["from"])
       ret ? (puts "Rake successful") : (puts "Rake unsuccessful")
     end
   end
